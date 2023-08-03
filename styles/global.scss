@@ -1,0 +1,168 @@
+@use './theme' as t;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&family=Poppins:wght@200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap');
+* {
+  box-sizing: border-box;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--dark-4);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dark-5);
+}
+html {
+  --mainfont: 'Poppins';
+  --codefont: 'Noto Sans Mono';
+  --light-fc: #fcfcfc;
+  --light-e: #eeeeee;
+  --light-d: #dddddd;
+  --light-bg: #ffffff;
+  --dark-1: #111111;
+  --dark-2: #222222;
+  --dark-3: #333333;
+  --dark-4: #444444;
+  --dark-5: #555555;
+  --dark-16: #161616;
+  --danger: #ff7276;
+  --warning: #fffaa0;
+  --tertiary: #6ec2f7;
+  --btn-color: var(--dark-3);
+  --contrast-btn-color: var(--mainfont-color);
+  --secondary: #6ec2f7;
+  --tertiary: #a686fc;
+  --danger: #ff7276;
+  --warning: #fffaa0;
+  --code: #25283a;
+  --code-color: #4fd4c3;
+  --svg-white-fixed: brightness(100%) saturate(0%);
+  --svg-black-fixed: brightness(0%) saturate(100%);
+  --svg-dark-fixed: brightness(0) saturate(100%) invert(16%) sepia(0%)
+    saturate(2%) hue-rotate(43deg) brightness(101%) contrast(90%);
+  --svg-light-fixed: brightness(0) saturate(100%) invert(100%) sepia(0%)
+    saturate(3834%) hue-rotate(265deg) brightness(114%) contrast(73%);
+
+  --secondary-lighter: #6ec2f740;
+  --tertiary-lighter: #a686fc40;
+  --danger-lighter: #ff727640;
+  --warning-lighter: #efcb6840;
+}
+html.light {
+  --primary: #7adc7a;
+  --background: var(--light-bg);
+  --mainfont-color: var(--dark-3);
+  --input-box: var(--light-e);
+  --input-box-hover: var(--light-d);
+  --primary-lighter: #7adc7141;
+  --primary-light: var(--primary);
+  --tooltip-bg: var(--dark-5);
+  --menu-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2);
+  --menu-bg: var(--light-e);
+  --dark-menu: var(--light-fc);
+
+  --svg-dark: var(--svg-dark-fixed);
+  --svg-theme: brightness(0) saturate(100%) invert(86%) sepia(21%)
+    saturate(973%) hue-rotate(61deg) brightness(90%) contrast(92%);
+  --svg-light: var(--svg-light-fixed);
+  --svg-light-contrast: var(--svg-dark-fixed);
+  --svg-dark-contrast: var(--svg-light-fixed);
+  --svg-white: var(--svg-white-fixed);
+  --svg-black: var(--svg-black-fixed);
+  --backdrop-bg: #00000044;
+  ::selection {
+    background: #7adc7a;
+  }
+}
+html.dark {
+  --primary: #9bfdcc;
+  --background: var(--dark-1);
+  --mainfont-color: var(--light-d);
+  --input-box: var(--dark-2);
+  --input-box-hover: var(--dark-3);
+  --primary-lighter: #9bfdcc21;
+  --primary-light: var(--primary);
+  --tooltip-bg: var(--light-e);
+  --menu-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.5);
+  --menu-bg: var(--dark-4);
+  --dark-menu: var(--dark-16);
+
+  --svg-dark: var(--svg-light-fixed);
+  --svg-theme: brightness(0) saturate(100%) invert(83%) sepia(54%)
+    saturate(264%) hue-rotate(86deg) brightness(101%) contrast(98%);
+  --svg-light: var(--svg-dark-fixed);
+  --svg-light-contrast: var(--svg-light-fixed);
+  --svg-dark-contrast: var(--svg-dark-fixed);
+  --svg-white: var(--svg-black-fixed);
+  --svg-black: var(--svg-white-fixed);
+
+  --backdrop-bg: #ffffff44;
+  ::placeholder {
+    color: #888888;
+  }
+  ::selection {
+    background: #9bfdcc95;
+  }
+}
+body {
+  color: var(--mainfont-color);
+  background-color: var(--background);
+  font-family: var(--mainfont);
+  margin: 0;
+}
+section {
+  max-width: 1024px;
+  padding: 1rem;
+  margin: auto;
+  margin-bottom: 8rem;
+  width: 100%;
+  text-align: center;
+  .sectionHeading {
+    text-align: center;
+  }
+  &.hero {
+    max-width: none;
+    margin: 0;
+    // margin: 0 2rem;
+  }
+  h2.sectionHeading {
+    padding: 1rem;
+    display: inline-block;
+    border-radius: 1rem;
+    background-color: var(--box-color);
+  }
+  &:nth-last-child(2) {
+    margin-bottom: 2rem;
+  }
+  @media (max-width: t.$mobile-width) {
+    padding: 0.7rem;
+    .sectionHeading {
+      font-size: 1.3rem;
+    }
+    h2.sectionHeading {
+      padding: 0.5rem 1rem;
+      border-radius: 0.8rem;
+    }
+    margin-bottom: 5rem;
+  }
+}
+a {
+  text-decoration: inherit;
+  color: inherit;
+}
+section.footer {
+  margin-bottom: 0;
+}

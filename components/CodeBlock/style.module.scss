@@ -1,0 +1,24 @@
+.codeContainer {
+  padding: 1rem;
+  background-color: var(--code);
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  max-width: 60ch;
+  margin: 2rem auto;
+}
+.code {
+  font-family: var(--codefont) !important;
+  background-color: var(--code) !important;
+  padding: 0 !important;
+
+  text-align: left;
+  // color: var(--code-color);
+  // white-space: normal;
+  &:focus {
+    outline: none;
+  }
+}
+.codeTitle {
+  font-size: 0.6rem;
+  text-align: right;
+}

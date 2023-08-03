@@ -1,0 +1,85 @@
+@use './styles/theme' as t;
+.mainTitle {
+  font-weight: 400;
+  font-size: 2.5rem;
+  @media screen and (max-width: t.$mobile-width) {
+    font-size: 1.8rem;
+  }
+}
+.image {
+  width: 80ch;
+  height: auto;
+  border: 2px solid var(--primary);
+  border-radius: 5px;
+  margin: 2rem auto;
+  box-shadow: 0px 10px 3rem 0.5rem var(--primary-lighter);
+  @media screen and (max-width: t.$mobile-width) {
+    width: 100%;
+  }
+}
+.imageNoOutline {
+  width: 80ch;
+  height: auto;
+  border-radius: 5px;
+  margin: 2rem auto;
+  @media screen and (max-width: t.$mobile-width) {
+    width: 100%;
+  }
+}
+.anchor {
+  display: block;
+  position: relative;
+  top: -5rem;
+  visibility: hidden;
+}
+.imageCaption {
+  font-size: 0.8rem;
+  max-width: 60ch;
+
+  margin: 0 auto;
+  margin-top: -1rem;
+  text-align: center;
+  font-style: italic;
+}
+.description {
+  margin: 1rem auto;
+  text-align: left;
+  max-width: 60ch;
+  line-height: 2rem;
+}
+.sourceCode {
+  text-align: center;
+  padding: 1rem;
+  color: var(--dark-3);
+  font-size: 1.2rem;
+  border-radius: 1.5rem;
+  background-color: var(--primary);
+}
+.techArea {
+  max-width: 60ch;
+  display: flex;
+  margin: 2rem auto;
+  gap: 1rem;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  @media screen and (max-width: t.$mobile-width) {
+    gap: 1rem;
+  }
+}
+.mainDesc {
+  &:before,
+  &:after {
+    content: '"';
+    color: var(--primary);
+    font-size: 1.1rem;
+  }
+  font-weight: 500;
+}
+
+.playground {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  justify-content: stretch;
+  align-items: center;
+  gap: 2rem;
+}

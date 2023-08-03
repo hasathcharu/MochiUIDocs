@@ -1,0 +1,172 @@
+@use '../../styles/theme' as t;
+.buttonContainer {
+  position: relative;
+  display: inline-block;
+  @media (max-width: t.$tab-width) {
+    display: grid;
+    width: 100%;
+  }
+}
+.buttonContainer100 {
+  position: relative;
+  display: grid;
+  width: 100%;
+}
+button.default {
+  all: unset;
+  padding: 0.8rem 0.6rem;
+  border-radius: 1rem;
+  background-color: var(--primary);
+  color: var(--dark-3);
+  position: relative;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.3rem;
+  cursor: pointer;
+  .btnContainer {
+    display: inline-flex;
+  }
+  .btnContent {
+    padding: 0 0.5rem;
+  }
+  @media (hover: hover) {
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+}
+.toolTip {
+  position: absolute;
+  left: 50%;
+  z-index: 500;
+  text-align: center;
+  color: var(--background);
+  background-color: var(--tooltip-bg);
+  margin-top: 5px;
+  padding: 1px 6px;
+  border-radius: 5px;
+  font-size: 0.6rem;
+}
+button.secondary {
+  background: var(--input-box);
+  color: var(--primary);
+  box-shadow: none;
+  @media (hover: hover) {
+    &:hover {
+      color: var(--dark-3);
+      background-color: var(--primary);
+    }
+  }
+}
+button.medium {
+  padding: 0.4rem 0.3rem;
+  font-size: 1rem;
+  border-radius: 0.6rem;
+  .btnContent {
+    padding: 0 0.3rem;
+  }
+}
+button.regular {
+  padding: 0.5rem 0.4rem;
+  font-size: 1rem;
+  border-radius: 0.6rem;
+  .btnContent {
+    padding: 0 0.4rem;
+  }
+}
+button.small {
+  padding: 0.3rem 0.2rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  .btnContainer {
+    display: grid;
+    justify-items: center;
+    gap: 0;
+  }
+  .btnContent {
+    padding: 0 0.2rem;
+  }
+  .btnText {
+    display: none;
+  }
+  @media (max-width: t.$tab-width) {
+    .btnText {
+      font-size: 0.6rem;
+      display: block;
+    }
+  }
+}
+
+button.danger {
+  background-color: var(--danger);
+  @media (hover: hover) {
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+}
+button.sdanger {
+  color: var(--danger);
+  background: var(--input-box);
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--danger);
+      color: var(--dark-3);
+    }
+  }
+}
+button.stertiary {
+  color: var(--tertiary);
+  background-color: var(--input-box);
+  box-shadow: none;
+  @media (hover: hover) {
+    &:hover {
+      color: var(--dark-3);
+      background-color: var(--tertiary);
+    }
+  }
+}
+button.tertiary {
+  background-color: var(--tertiary);
+}
+button.join {
+  .btnContainer {
+    width: 100%;
+    justify-content: center;
+  }
+}
+.loaderBtnContainer {
+  display: grid;
+  place-content: center;
+  height: 1.3rem;
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+}
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+.loaderBtn {
+  width: 1rem;
+  height: 1rem;
+  line-height: 1.3rem;
+  display: inline-block;
+  border: 2px solid var(--dark-3);
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loaderBtnContrast {
+  border: 2px solid var(--mainfont-color);
+  border-bottom-color: transparent;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
