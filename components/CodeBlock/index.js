@@ -9,7 +9,7 @@ export default function (props) {
     <div className={styles.codeContainer}>
       <div className={styles.codeTitle}>{props.Language}</div>
       <pre className={styles.code}>
-        <code className={`language-${props.language}`}>{props.children}</code>
+        <code className={` language-${props.language}`}>{props.children}</code>
       </pre>
     </div>
   );

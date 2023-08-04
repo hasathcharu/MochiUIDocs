@@ -6,7 +6,7 @@ import Hero from '../components/Hero';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from '../styles/blog.module.scss';
 import { SubHeading, PropHeading, SubHeading2 } from '../components/Headings/';
-import { Button, Input } from 'soft-inputs/dist';
+import { Button, Input } from 'soft-inputs';
 import {
   faDownload,
   faUpRightFromSquare,
@@ -45,9 +45,12 @@ export default function Home() {
         whileInView='enter'
         viewport={{ once: true }}
       >
+        <a className={styles.anchor} id='documentation'></a>
         <h1 className={styles.mainTitle}>Soft Inputs Documentation</h1>
         <span>Updated on 3rd Aug 2023</span>
-        <SubHeading left={true}>Introduction</SubHeading>
+        <SubHeading left={true} anchor='introduction'>
+          Introduction
+        </SubHeading>
 
         <p className={styles.description}>
           This is a small UI library that I created to help me with my projects.
@@ -58,14 +61,18 @@ export default function Home() {
           iconRight={<FontAwesomeIcon icon={faUpRightFromSquare} />}
           title='View Source Code'
           onClick={() => {
-            window.open('https://github.com/Ascendants', '_blank');
+            window.open('https://github.com/hasathcharu/SoftInputs', '_blank');
           }}
         />
-        <SubHeading left={true}>Installation</SubHeading>
+        <SubHeading left={true} anchor='installation'>
+          Installation
+        </SubHeading>
         <CodeBlock language='bash' Language='Bash / ZSh'>
           npm i soft-inputs
         </CodeBlock>
-        <SubHeading left={true}>Text Input</SubHeading>
+        <SubHeading left={true} anchor='text-input'>
+          Text Input
+        </SubHeading>
         <div className={styles.playground}>
           <div>
             <CodeBlock language='javascript' Language='JSX'>
@@ -88,45 +95,67 @@ export default function Home() {
             />
           </div>
         </div>
-        <SubHeading2 left={true}>Text Input Props</SubHeading2>
-        <PropHeading title='domName' type='string' />
+        <SubHeading2 left={true} anchor='text-input-props'>
+          Text Input Props
+        </SubHeading2>
+        <PropHeading title='domName' type='string' anchor='textinput-domName' />
         <p className={styles.description}>
           This is the name that will be displayed on the label.
         </p>
-        <PropHeading title='name' type='string' />
+        <PropHeading title='name' type='string' anchor='textinput-name' />
 
         <p className={styles.description}>
           This is the name that will be used to identify the input.
         </p>
-        <PropHeading title='value' type='string' />
+        <PropHeading title='value' type='string' anchor='textinput-value' />
         <p className={styles.description}>
           This is the value of the input. A react state.
         </p>
-        <PropHeading title='onChange' type='function' />
+        <PropHeading
+          title='onChange'
+          type='function'
+          anchor='textinput-onChange'
+        />
         <p className={styles.description}>
           This is the function that will be called when the value of the input
           changes.
         </p>
-        <PropHeading title='placeholder' type='string' />
+        <PropHeading
+          title='placeholder'
+          type='string'
+          anchor='textinput-placeholder'
+        />
         <p className={styles.description}>
           This is the placeholder text that will be displayed when the input is
           empty.
         </p>
-        <PropHeading title='error' type='string' />
+        <PropHeading title='error' type='string' anchor='textinput-error' />
         <p className={styles.description}>
           This is the error message that will be displayed when the input is
           invalid.
         </p>
-        <PropHeading title='touched' type='boolean' />
+        <PropHeading
+          title='touched'
+          type='boolean'
+          anchor='textinput-touched'
+        />
         <p className={styles.description}>
           This is a boolean value that will be set to true when the input is
           touched.
         </p>
-        <PropHeading title='touched' type='boolean' />
+        <PropHeading
+          title='setTouched'
+          type='boolean'
+          anchor='textinput-setTouched'
+        />
         <p className={styles.description}>
           This is a function that will be called when the input is touched.
         </p>
-        <PropHeading title='disabled' type='boolean' />
+        <PropHeading
+          title='disabled'
+          type='boolean'
+          anchor='textinput-disabled'
+        />
         <p className={styles.description}>
           This is a boolean value that will be set to true when the input is
           disabled.

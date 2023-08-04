@@ -13,7 +13,6 @@ import {
   faBolt,
 } from '@fortawesome/free-solid-svg-icons';
 
-import hero from '../../images/ananda.svg';
 // import Button from '../Button';
 import {
   Button,
@@ -22,7 +21,7 @@ import {
   DropDown,
   Input,
   TimePicker,
-} from 'soft-inputs/dist/';
+} from 'soft-inputs';
 import styles from './hero.module.scss';
 import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -71,7 +70,10 @@ export default function Hero() {
           Designed by Hasathcharu
         </motion.h2>
         <motion.div initial='hidden' variants={contentP} animate='visible'>
-          <p>A simple set of React UI components to get work done.</p>
+          <p>
+            Efficient and Practical React UI Components for Seamless
+            Productivity.
+          </p>
           <p>Designed using Sass, Framer, FontAwesome and more.</p>
           <Button
             title='View Documentation'
