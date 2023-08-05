@@ -23,4 +23,8 @@
 .codeTitle {
   font-size: 0.6rem;
   text-align: right;
+  color: var(--light-d);
+  button {
+    color: var(--light-d) !important;
+  }
 }
