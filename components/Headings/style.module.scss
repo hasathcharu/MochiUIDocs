@@ -18,14 +18,20 @@
   margin: 1.5rem auto;
   display: block;
   cursor: pointer;
-  font-size: 1.5rem;
-  max-width: 50ch;
+  font-size: 1rem;
+  max-width: 70ch;
   text-align: left;
 
   & > h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     display: inline;
     font-weight: 400;
+  }
+  .type {
+    line-height: 1rem;
+    vertical-align: middle;
+    font-family: var(--codefont);
+    font-size: 1rem;
   }
   .anchorHash {
     opacity: 0;
@@ -38,7 +44,7 @@
 }
 .propHeadingTitle {
   border-radius: 0.5rem;
-  padding: 0 0.3rem;
+  padding: 0 0.4rem;
   background-color: var(--menu-bg);
   width: fit-content;
 }

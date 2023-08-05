@@ -37,7 +37,7 @@ module.exports.PropHeading = function (props) {
       >
         <h3 className={styles.propHeadingTitle}>{props.title}</h3>
         <h3>&nbsp;:&nbsp;</h3>
-        <h3>{props.type}</h3>{' '}
+        <h3 className={styles.type}>{props.type}</h3>{' '}
         {props.anchor && <span className={styles.anchorHash}>#</span>}
       </span>
     </>
