@@ -106,3 +106,12 @@
   background-color: var(--primary-lighter);
   margin: 6rem auto;
 }
+.list {
+  margin: 0 auto;
+  max-width: 60ch;
+  text-align: left;
+  li {
+    margin: 1rem 0;
+    line-height: 2rem;
+  }
+}

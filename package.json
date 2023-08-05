@@ -16,8 +16,9 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "babel-plugin-prismjs": "^2.1.0",
+    "formik": "^2.4.3",
     "framer-motion": "^10.15.0",
-    "mochi-ui": "^1.0.30",
+    "mochi-ui": "^1.2.0",
     "next": "^13.3.1",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
@@ -26,7 +27,8 @@
     "react-scripts": "5.0.1",
     "react-scroll": "^1.8.7",
     "sass": "^1.64.2",
-    "styled-components": "^6.0.7"
+    "styled-components": "^6.0.7",
+    "yup": "^1.2.0"
   },
   "devDependencies": {
     "eslint": "8.22.0",

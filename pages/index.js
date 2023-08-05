@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 import Hero from '../components/Hero';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from '../styles/blog.module.scss';
+import Form from '../components/Form';
+import Link from '../components/Link';
 import { SubHeading, PropHeading, SubHeading2 } from '../components/Headings/';
 import {
   Button,
@@ -64,19 +66,31 @@ export default function Home() {
       >
         <a className={styles.anchor} id='documentation'></a>
         <h1 className={styles.mainTitle}>Mochi UI Documentation</h1>
-        <span>Updated on 5th Aug 2023</span>
+        <span>Updated on 6th Aug 2023</span>
         <SubHeading left={true} anchor='introduction'>
           Introduction
         </SubHeading>
         <p className={styles.description}>
-          This is a small UI library that I created to help me with my projects.
-          It is a collection of components that I use frequently. I have
-          published it on NPM so that others can use it as well.
+          Welcome to Mochi UI: A visionary library curated with a delightful
+          blend of squishy, fluid design language, reminiscent of the
+          mesmerizing Japanese rice cake it's named after.
         </p>
         <p className={styles.description}>
-          I got the name from the Japanese rice cake called Mochi. I love Mochi
-          and I love coding, so I thought it would be a good name for this
-          library as the components are squishy and fun to use, just like Mochi.
+          Crafted entirely with pure CSS, Mochi UI redefines user interface
+          design, offering a seamless fusion of aesthetics and functionality.
+          Enriching the experience further, the library harnesses the power of
+          Framer Motion to infuse animations with a mesmerizing fluidity.
+        </p>
+        <p className={styles.description}>
+          Initially, Mochi UI was created as a set of components for a personal
+          project. However, as the project grew, so did the need for a
+          comprehensive library of components. Thus, Mochi UI was born.
+        </p>
+        <p className={styles.description}>
+          The library is currently in its infancy, with only a handful of
+          components available. However, the library will be updated regularly
+          with new components and features. I hope you enjoy using Mochi UI as
+          much as I enjoyed creating it.
         </p>
         <Button
           iconRight={<FontAwesomeIcon icon={faUpRightFromSquare} />}
@@ -88,7 +102,7 @@ export default function Home() {
         <SubHeading left={true} anchor='installation'>
           Installation
         </SubHeading>
-        <CodeBlock language='bash' Language='Bash / ZSh'>
+        <CodeBlock language='bash' Language='Bash / ZSh' narrow>
           npm i mochi-ui
         </CodeBlock>
         <SubHeading left={true} anchor='usage'>
@@ -97,7 +111,7 @@ export default function Home() {
         <p className={styles.description}>
           To use the components, you need to import them from the package.
         </p>
-        <CodeBlock language='javascript' Language='JS / TS'>
+        <CodeBlock language='javascript' Language='JS / TS' narrow>
           {`import { Button, Input } from 'mochi-ui';`}
         </CodeBlock>
         <p className={styles.description}>
@@ -107,9 +121,16 @@ export default function Home() {
           IMPORTANT: You need to add the "light" or "dark" class to the html
           tag.
         </p>
-        <CodeBlock language='html' Language='HTML'>
+        <CodeBlock language='html' Language='HTML' narrow>
           {`<html class="light">`}
         </CodeBlock>
+        <SubHeading left={true} anchor='support'>
+          Supported In
+        </SubHeading>
+        <ul className={styles.list}>
+          <li>React 17 & Above</li>
+          <li>NextJS 12 & Above</li>
+        </ul>
         <div className={styles.separator}></div>
       </motion.section>
       <motion.section
@@ -648,7 +669,8 @@ export default function Home() {
         <PropHeading title='error' type='string' anchor='dropdown-error' />
         <p className={styles.description}>
           This is the error message that will be displayed when the input is
-          invalid.
+          invalid. Only works when the <code>touched</code> prop is set to{' '}
+          <i>true</i>.
         </p>
         <PropHeading title='touched' type='boolean' anchor='dropdown-touched' />
         <p className={styles.description}>
@@ -1173,6 +1195,208 @@ html.dark {
   color: var(--mainfont-color) !important;
 }`}
         </CodeBlock>
+      </motion.section>
+      <motion.section
+        className='about'
+        id='example-section'
+        variants={inView}
+        initial='hidden'
+        whileInView='enter'
+        viewport={{ once: true }}
+      >
+        <SubHeading left={true} anchor='example'>
+          Example
+        </SubHeading>
+        <p className={styles.description}>
+          Here is an example of how you can use the components in your project.
+          I have used Formik to handle the form state. Please see the code below
+          the form for more details.
+        </p>
+        <Form />
+
+        <CodeBlock language='javascript' Language='JSX'>
+          {`import React from 'react';
+import {
+  Input,
+  DatePicker,
+  Button,
+  DropDown,
+  CheckBoxGroup,
+} from 'mochi-ui';
+import styles from './styles.module.scss';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useFormik } from 'formik';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import * as yup from 'yup';
+const schema = yup.object({
+  fname: yup
+    .string()
+    .required('First name is required')
+    .min(3, 'Min length is 3'),
+  dob: yup
+    .date()
+    .required('Date of birth is required')
+    .max(
+      new Date(
+        new Date(new Date().setFullYear(new Date().getFullYear() - 18)).setDate(
+          new Date().getDate() + 1
+        )
+      ),
+      'You should be atleast 18 years old'
+    ),
+  color: yup.string().required('Color is required'),
+  favoriteFood: yup
+    .array()
+    .required('Favorite food is required')
+    .min(1, 'Select atleast one food'),
+});
+function App() {
+  const [values, setValues] = React.useState();
+  const form = useFormik({
+    initialValues: {
+      fname: '',
+      dob: new Date(new Date().setFullYear(new Date().getFullYear() - 18)),
+      color: '',
+      favoriteFood: ['rice'],
+    },
+    validationSchema: schema,
+    onSubmit: async (values) => {
+      await dummyWait();
+      setValues(values);
+    },
+  });
+  async function dummyWait() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('done');
+      }, 1000);
+    });
+  }
+  return (
+    <div className={styles.box}>
+      <div className='normal'>
+        <h1 style={{ fontWeight: 500 }}>Sample Form</h1>
+        <div>
+          <Input
+            name='fname'
+            domName='First Name'
+            value={form.values.fname}
+            placeholder='enter your first name'
+            onChange={form.handleChange}
+            error={form.errors.fname}
+            touched={form.touched.fname}
+            setTouched={() => form.setFieldTouched('fname')}
+          />
+          <DatePicker
+            domName='Your Birthday'
+            name='dob'
+            value={form.values.dob}
+            onChange={(date) => form.setFieldValue('dob', date)}
+            error={form.errors.dob}
+            touched={form.touched.dob}
+            setTouched={() => form.setFieldTouched('dob')}
+            endYear={new Date().getFullYear() - 18}
+          />
+          <DropDown
+            domName='Favorite Color'
+            name='color'
+            value={form.values.color}
+            onChange={(value) => form.setFieldValue('color', value)}
+            // unSelectable={true}
+            values={[
+              {
+                key: 'r',
+                label: 'Red',
+              },
+              { key: 'g', label: 'Green' },
+              { key: 'b', label: 'Blue' },
+            ]}
+            touched={form.touched.color}
+            setTouched={() => form.setFieldTouched('color')}
+            error={form.errors.color}
+          />
+          <CheckBoxGroup
+            values={[
+              {
+                key: 'rice',
+                label: 'Rice',
+                disabled: true,
+              },
+              {
+                key: 'noodles',
+                label: 'Noodles',
+              },
+              {
+                key: 'hoppers',
+                label: 'Hoppers',
+              },
+              {
+                key: 'bread',
+                label: 'Bread',
+              },
+            ]}
+            value={form.values.favoriteFood}
+            onChange={(value) => form.setFieldValue('favoriteFood', value)}
+            touched={form.touched.favoriteFood}
+            setTouched={() => form.setFieldTouched('favoriteFood')}
+            error={form.errors.favoriteFood}
+            domName='Favorite Food'
+          />
+        </div>
+        <br />
+        <Button
+          title='Sign In'
+          iconRight={<FontAwesomeIcon icon={faArrowRight} />}
+          onClick={form.submitForm}
+        />
+        <br />
+        <AnimatePresence>
+          <br />
+          {values && values.fname && (
+            <motion.div className={styles.result}>
+              <span>First Name: </span>
+              <span>{values.fname}</span>
+              <span>Date of Birth: </span>
+              <span>{values.dob.toISOString()}</span>
+              <span>Color: </span>
+              <span>{values.color}</span>
+              <span>Favorite Food: </span>
+              <span>{JSON.stringify(values.favoriteFood)}</span>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
+`}
+        </CodeBlock>
+      </motion.section>
+      <div className={styles.separator}></div>
+      <motion.section
+        className='about'
+        id='conclude-section'
+        variants={inView}
+        initial='hidden'
+        whileInView='enter'
+        viewport={{ once: true }}
+      >
+        <SubHeading left={true} anchor='conclusion'>
+          Conclusion
+        </SubHeading>
+        <p className={styles.description}>
+          I hope you found this library useful. If you have any suggestions or
+          feedback, please feel free to contact me. You can reach out to me by
+          filling the contact form at{' '}
+          <Link href='https://hasathcharu.com' target='_blank'>
+            hasathcharu.com.
+          </Link>
+          Thank you for reading.
+        </p>
       </motion.section>
     </div>
   );

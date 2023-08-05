@@ -1,0 +1,17 @@
+@use './../../styles/theme' as t;
+.box {
+  background-color: var(--dark-menu);
+  padding: 2rem;
+  display: grid;
+  border-radius: 2rem;
+  margin: auto;
+  max-width: fit-content;
+  @media screen and (max-width: t.$mobile-width) {
+    padding: 2rem 1rem;
+  }
+}
+.result {
+  text-align: left;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
