@@ -26,20 +26,26 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <meta name='theme-color' content='#22cc9d' />
+        <meta name='theme-color' content='#9bfdcc' />
         <meta
           name='viewport'
           content='width=device-width, initial-scale=1'
         ></meta>
-        <meta property='og:title' content='Haritha Hasathcharu' />
+        <meta property='og:title' content='Mochi UI' />
         <meta
           property='og:description'
-          content="This is Haritha's Personal Website"
+          content='Official Documentation for Mochi UI'
         />
-        <meta property='og:image' content='https://hasathcharu.com/embed.png' />
-        <meta property='og:url' content='https://hasathcharu.com' />
+        <meta
+          property='og:image'
+          content='https://mochi.hasathcharu.com/embed.png'
+        />
+        <meta property='og:url' content='https://mochi.hasathcharu.com' />
         <meta property='og:type' content='website' />
-        <meta name='description' content="This is Haritha's Personal Website" />
+        <meta
+          name='description'
+          content='Official Documentation for Mochi UI'
+        />
       </Head>
       <Header
         handleTheme={handleTheme}
