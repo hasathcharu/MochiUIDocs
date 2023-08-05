@@ -87,3 +87,9 @@
     justify-content: center;
   }
 }
+.separator {
+  width: 80%;
+  height: 2px;
+  background-color: var(--primary-lighter);
+  margin: 6rem auto;
+}

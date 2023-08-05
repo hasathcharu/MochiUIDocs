@@ -3,12 +3,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCircleHalfStroke,
-  faEnvelope,
-  faGraduationCap,
-  faGhost,
   faHouse,
-  faStar,
-  faCode,
+  faPersonChalkboard,
+  faCircleDot,
+  faSquareCheck,
+  faClock,
+  faCalendar,
+  faKeyboard,
+  faComputerMouse,
+  faSquareCaretDown,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { Link } from 'react-scroll';
@@ -90,7 +93,7 @@ export default function Menu(props) {
                 <li>
                   <Link
                     activeClass={styles.active}
-                    to='home'
+                    to='home-section'
                     spy={true}
                     smooth={true}
                     offset={-70}
@@ -107,58 +110,7 @@ export default function Menu(props) {
                 <li>
                   <Link
                     activeClass={styles.active}
-                    to='about'
-                    spy={true}
-                    smooth={true}
-                    offset={-70}
-                    duration={500}
-                  >
-                    <div className={styles.link}>
-                      <span>
-                        <FontAwesomeIcon icon={faGhost} fixedWidth={true} />
-                      </span>
-                      <span>About</span>
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    activeClass={styles.active}
-                    to='projects'
-                    spy={true}
-                    smooth={true}
-                    offset={-70}
-                    duration={500}
-                  >
-                    <div className={styles.link}>
-                      <span>
-                        <FontAwesomeIcon icon={faCode} fixedWidth={true} />
-                      </span>
-                      <span>Projects</span>
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    activeClass={styles.active}
-                    to='skills'
-                    spy={true}
-                    smooth={true}
-                    offset={-70}
-                    duration={500}
-                  >
-                    <div className={styles.link}>
-                      <span>
-                        <FontAwesomeIcon icon={faStar} fixedWidth={true} />
-                      </span>
-                      <span>Skills</span>
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    activeClass={styles.active}
-                    to='education'
+                    to='introduction-section'
                     spy={true}
                     smooth={true}
                     offset={-70}
@@ -167,18 +119,18 @@ export default function Menu(props) {
                     <div className={styles.link}>
                       <span>
                         <FontAwesomeIcon
-                          icon={faGraduationCap}
+                          icon={faPersonChalkboard}
                           fixedWidth={true}
                         />
                       </span>
-                      <span>Education</span>
+                      <span>Intro</span>
                     </div>
                   </Link>
                 </li>
                 <li>
                   <Link
                     activeClass={styles.active}
-                    to='contact'
+                    to='button-section'
                     spy={true}
                     smooth={true}
                     offset={-70}
@@ -186,9 +138,120 @@ export default function Menu(props) {
                   >
                     <div className={styles.link}>
                       <span>
-                        <FontAwesomeIcon icon={faEnvelope} fixedWidth={true} />
+                        <FontAwesomeIcon
+                          icon={faComputerMouse}
+                          fixedWidth={true}
+                        />
                       </span>
-                      <span>Contact</span>
+                      <span>Button</span>
+                    </div>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    activeClass={styles.active}
+                    to='input-section'
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                  >
+                    <div className={styles.link}>
+                      <span>
+                        <FontAwesomeIcon icon={faKeyboard} fixedWidth={true} />
+                      </span>
+                      <span>Input</span>
+                    </div>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    activeClass={styles.active}
+                    to='datepicker-section'
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                  >
+                    <div className={styles.link}>
+                      <span>
+                        <FontAwesomeIcon icon={faCalendar} fixedWidth={true} />
+                      </span>
+                      <span>DatePicker</span>
+                    </div>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    activeClass={styles.active}
+                    to='timepicker-section'
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                  >
+                    <div className={styles.link}>
+                      <span>
+                        <FontAwesomeIcon icon={faClock} fixedWidth={true} />
+                      </span>
+                      <span>TimePicker</span>
+                    </div>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    activeClass={styles.active}
+                    to='dropdown-section'
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                  >
+                    <div className={styles.link}>
+                      <span>
+                        <FontAwesomeIcon
+                          icon={faSquareCaretDown}
+                          fixedWidth={true}
+                        />
+                      </span>
+                      <span>DropDown</span>
+                    </div>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    activeClass={styles.active}
+                    to='checkbox-section'
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                  >
+                    <div className={styles.link}>
+                      <span>
+                        <FontAwesomeIcon
+                          icon={faSquareCheck}
+                          fixedWidth={true}
+                        />
+                      </span>
+                      <span>CheckBox</span>
+                    </div>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    activeClass={styles.active}
+                    to='radio-section'
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                  >
+                    <div className={styles.link}>
+                      <span>
+                        <FontAwesomeIcon icon={faCircleDot} fixedWidth={true} />
+                      </span>
+                      <span>Radio</span>
                     </div>
                   </Link>
                 </li>
