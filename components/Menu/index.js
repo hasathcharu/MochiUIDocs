@@ -13,6 +13,7 @@ import {
   faComputerMouse,
   faSquareCaretDown,
   faSliders,
+  faWandMagicSparkles,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { Link } from 'react-scroll';
@@ -270,6 +271,26 @@ export default function Menu(props) {
                         <FontAwesomeIcon icon={faSliders} fixedWidth={true} />
                       </span>
                       <span>Customize</span>
+                    </div>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    activeClass={styles.active}
+                    to='example-section'
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                  >
+                    <div className={styles.link}>
+                      <span>
+                        <FontAwesomeIcon
+                          icon={faWandMagicSparkles}
+                          fixedWidth={true}
+                        />
+                      </span>
+                      <span>Example</span>
                     </div>
                   </Link>
                 </li>
