@@ -86,12 +86,18 @@
 .playground {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  justify-content: stretch;
+  justify-content: center;
   align-items: center;
   gap: 2rem;
+  .codeBlockCont {
+    overflow: auto;
+  }
   @media screen and (max-width: t.$tab-width) {
     grid-template-columns: 1fr;
     justify-content: center;
+  }
+  .demoContainer {
+    width: 100%;
   }
 }
 .separator {

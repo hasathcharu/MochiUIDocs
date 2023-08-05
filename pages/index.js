@@ -64,7 +64,7 @@ export default function Home() {
       >
         <a className={styles.anchor} id='documentation'></a>
         <h1 className={styles.mainTitle}>Mochi UI Documentation</h1>
-        <span>Updated on 5rd Aug 2023</span>
+        <span>Updated on 5th Aug 2023</span>
         <SubHeading left={true} anchor='introduction'>
           Introduction
         </SubHeading>
@@ -72,6 +72,11 @@ export default function Home() {
           This is a small UI library that I created to help me with my projects.
           It is a collection of components that I use frequently. I have
           published it on NPM so that others can use it as well.
+        </p>
+        <p className={styles.description}>
+          I got the name from the Japanese rice cake called Mochi. I love Mochi
+          and I love coding, so I thought it would be a good name for this
+          library as the components are squishy and fun to use, just like Mochi.
         </p>
         <Button
           iconRight={<FontAwesomeIcon icon={faUpRightFromSquare} />}
@@ -119,7 +124,7 @@ export default function Home() {
           Button
         </SubHeading>
         <div className={styles.playground}>
-          <div>
+          <div className={styles.codeBlockCont}>
             <CodeBlock language='javascript' Language='JSX'>
               {`<Button
   title='Click Me'
@@ -130,7 +135,7 @@ export default function Home() {
 />`}
             </CodeBlock>
           </div>
-          <div>
+          <div className={styles.demoContainer}>
             <Button
               title='Click Me'
               iconRight={<FontAwesomeIcon icon={faMagicWandSparkles} />}
@@ -224,6 +229,11 @@ export default function Home() {
           This is a boolean value that will make the button have a shaded
           background.
         </p>
+        <PropHeading title='margin' type='boolean' anchor='button-margin' />
+        <p className={styles.description}>
+          This is a boolean value to remove the margin from the button. Set to{' '}
+          <i>true</i> by default.
+        </p>
         <PropHeading title='disabled' type='boolean' anchor='button-disabled' />
         <p className={styles.description}>
           This is a boolean value that will make the button disabled.
@@ -242,7 +252,7 @@ export default function Home() {
           Input
         </SubHeading>
         <div className={styles.playground}>
-          <div>
+          <div className={styles.codeBlockCont}>
             <CodeBlock language='javascript' Language='JSX'>
               {`<Input
   domName='Name'
@@ -253,7 +263,7 @@ export default function Home() {
 />`}
             </CodeBlock>
           </div>
-          <div>
+          <div className={styles.demoContainer}>
             <Input
               domName='Name'
               name='name'
@@ -342,7 +352,7 @@ export default function Home() {
           DatePicker
         </SubHeading>
         <div className={styles.playground}>
-          <div>
+          <div className={styles.codeBlockCont}>
             <CodeBlock language='javascript' Language='JSX'>
               {`<DatePicker
   domName='Birthday'
@@ -352,7 +362,7 @@ export default function Home() {
 />`}
             </CodeBlock>
           </div>
-          <div>
+          <div className={styles.demoContainer}>
             <DatePicker
               domName='Birthday'
               value={date}
@@ -460,7 +470,7 @@ export default function Home() {
           TimePicker
         </SubHeading>
         <div className={styles.playground}>
-          <div>
+          <div className={styles.codeBlockCont}>
             <CodeBlock language='javascript' Language='JSX'>
               {`<TimePicker
   domName='Time'
@@ -470,7 +480,7 @@ export default function Home() {
 />`}
             </CodeBlock>
           </div>
-          <div>
+          <div className={styles.demoContainer}>
             <TimePicker
               domName='Arrival Time'
               value={time}
@@ -552,7 +562,7 @@ export default function Home() {
           DropDown
         </SubHeading>
         <div className={styles.playground}>
-          <div>
+          <div className={styles.codeBlockCont}>
             <CodeBlock language='javascript' Language='JSX'>
               {`<DropDown
   domName='Favorite Food'
@@ -578,7 +588,7 @@ export default function Home() {
 />`}
             </CodeBlock>
           </div>
-          <div>
+          <div className={styles.demoContainer}>
             <DropDown
               value={food}
               onChange={(i) => setFood(i)}
@@ -695,7 +705,7 @@ export default function Home() {
           CheckBoxGroup
         </SubHeading>
         <div className={styles.playground}>
-          <div>
+          <div className={styles.codeBlockCont}>
             <CodeBlock language='javascript' Language='JSX'>
               {`<CheckBoxGroup
   values={[
@@ -725,7 +735,7 @@ export default function Home() {
 />`}
             </CodeBlock>
           </div>
-          <div>
+          <div className={styles.demoContainer}>
             <CheckBoxGroup
               values={[
                 {
@@ -839,7 +849,7 @@ export default function Home() {
           that you use the CheckBoxGroup component.
         </p>
         <div className={styles.playground}>
-          <div>
+          <div className={styles.codeBlockCont}>
             <CodeBlock language='javascript' Language='JSX'>
               {`<CheckBox 
   domName='Fried Chicken 🍗'
@@ -849,7 +859,7 @@ export default function Home() {
 />`}
             </CodeBlock>
           </div>
-          <div>
+          <div className={styles.demoContainer}>
             <CheckBox
               domName='Fried Chicken 🍗'
               value={friedChicken}
@@ -903,7 +913,7 @@ export default function Home() {
           RadioGroup
         </SubHeading>
         <div className={styles.playground}>
-          <div>
+          <div className={styles.codeBlockCont}>
             <CodeBlock language='javascript' Language='JSX'>
               {`<RadioGroup
   values={[
@@ -932,7 +942,7 @@ export default function Home() {
 />`}
             </CodeBlock>
           </div>
-          <div>
+          <div className={styles.demoContainer}>
             <RadioGroup
               values={[
                 {
@@ -1040,7 +1050,7 @@ export default function Home() {
           the RadioGroup component.
         </p>
         <div className={styles.playground}>
-          <div>
+          <div className={styles.codeBlockCont}>
             <CodeBlock language='javascript' Language='JSX'>
               {`<Radio 
   domName='Pizza 🍕'
@@ -1050,7 +1060,7 @@ export default function Home() {
 />`}
             </CodeBlock>
           </div>
-          <div>
+          <div className={styles.demoContainer}>
             <Radio
               domName='Pizza 🍕'
               value={pizza}
@@ -1088,6 +1098,81 @@ export default function Home() {
           A boolean value that will disable the checkbox.
         </p>
         <div className={styles.separator}></div>
+      </motion.section>
+      <motion.section
+        className='about'
+        id='customize-section'
+        variants={inView}
+        initial='hidden'
+        whileInView='enter'
+        viewport={{ once: true }}
+      >
+        <SubHeading left={true} anchor='customization'>
+          Customization
+        </SubHeading>
+        <p className={styles.description}>
+          You can customize the components by changing the css variables in your
+          global css file. Here is an example of how you can do it. You can copy
+          the code below and paste it in your global css file and change the
+          colors to your heart's content.
+        </p>
+        <CodeBlock language='css' Language='CSS'>
+          {`html {
+  .mochiCustom {
+    --mainfont: 'Poppins' !important;
+    --light-e: #eeeeee !important;
+    --light-d: #dddddd !important;
+    --light-bg: #ffffff !important;
+    --dark-1: #111111 !important;
+    --dark-2: #222222 !important;
+    --dark-3: #333333 !important;
+    --dark-4: #444444 !important;
+    --dark-5: #555555 !important;
+    --dark-8: #888888 !important;
+    --secondary: #6ec2f7 !important;
+    --tertiary: #a686fc !important;
+    --danger: #ff7276 !important;
+    --warning: #fffaa0 !important;
+
+    --btn-color: var(--dark-3) !important;
+    --contrast-btn-color: var(--mainfont-color) !important;
+
+    --secondary-lighter: #6ec2f740 !important;
+    --tertiary-lighter: #a686fc40 !important;
+    --danger-lighter: #ff727640 !important;
+    --warning-lighter: #efcb6840 !important;
+  }
+}
+html.light {
+  .mochiCustom {
+    --primary: #7adc7a !important;
+    --primary-lighter: #7adc7a40 !important;
+    --background: var(--light-bg) !important;
+    --mainfont-color: var(--dark-3) !important;
+    --input-box: var(--light-e) !important;
+    --input-box-hover: var(--light-d) !important;
+    --menu-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2) !important;
+  }
+}
+html.dark {
+  .mochiCustom {
+    --primary: #9bfdcc !important;
+    --primary-lighter: #9bfdcc40 !important;
+    --background: var(--dark-1) !important;
+    --mainfont-color: var(--light-d) !important;
+    --input-box: var(--dark-2) !important;
+    --input-box-hover: var(--dark-3) !important;
+    --menu-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.5) !important;
+    ::placeholder {
+      color: var(--dark-8) !important;
+    }
+  }
+}
+.mochiCustom {
+  font-family: var(--mainfont) !important;
+  color: var(--mainfont-color) !important;
+}`}
+        </CodeBlock>
       </motion.section>
     </div>
   );

@@ -5,7 +5,7 @@ import {
   faMagicWandSparkles,
   faBolt,
 } from '@fortawesome/free-solid-svg-icons';
-
+import { scroller } from 'react-scroll';
 // import Button from '../Button';
 import {
   Button,
@@ -82,14 +82,15 @@ export default function Hero() {
         </motion.h2>
         <motion.div initial='hidden' variants={contentP} animate='visible'>
           <p>
-            Efficient and Practical React UI Components for Seamless
-            Productivity.
+            Squishy and soft UI components for React. Made with love and care.
           </p>
           <p>Designed using Sass, Framer, FontAwesome and more.</p>
           <Button
             title='View Documentation'
             iconRight={<FontAwesomeIcon icon={faFileLines} />}
-            onClick={() => {}}
+            onClick={() => {
+              scroller.scrollTo('documentation');
+            }}
           />
         </motion.div>
       </div>

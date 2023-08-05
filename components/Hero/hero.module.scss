@@ -25,13 +25,9 @@
     justify-content: center;
     .box {
       background-color: var(--dark-menu);
-      // width: 10rem;
-      // height: 10rem;
       padding: 2rem;
       display: grid;
-
       border-radius: 2rem;
-      // box-shadow: var(--menu-shadow);
     }
   }
   .heroImage {
@@ -48,7 +44,12 @@
       grid-row-start: 1;
       align-self: center;
     }
-
+    .heroImageContainer {
+      .box {
+        padding: 1rem;
+        width: 100%;
+      }
+    }
     .heroText h1 {
       font-size: 2rem;
     }
