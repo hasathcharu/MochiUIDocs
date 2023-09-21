@@ -117,7 +117,7 @@ export default function Hero() {
               value={coffee}
               onChange={(i) => setCoffee(i)}
               domName='Your Favorite Coffee ☕️'
-              defaultValue='-- Chooose your coffee'
+              defaultValue='-- Choose your coffee'
               values={[
                 {
                   key: 'espresso',
